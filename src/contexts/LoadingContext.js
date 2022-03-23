@@ -1,13 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-const LoadingContext = createContext({
-    isLoading: false,
-    setIsLoading: () => null
-})
+const LoadingContext = createContext()
+
+export const useLoading = () => useContext(LoadingContext)
 
 export default function LoadingContextProvider({ children })
 {
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     const loadingCtx = {
         isLoading,
