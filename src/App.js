@@ -1,25 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import LoadingContextProvider from "./contexts/LoadingContext";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Users from './pages/Users';
+import Posts from './pages/Posts';
+import Todos from './pages/Todos';
+import styled from 'styled-components';
+import Navigation from "./Navigation";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Container = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 100%;
+`
+
+function App()
+{
+    return (
+        <LoadingContextProvider>
+            <Container>
+                <Navigation />
+                <Routes>
+                    <Route path="/users" element={<Users />} />
+                    <Route path="/posts" element={<Posts />} />
+                    <Route path="/todos" element={<Todos />} />
+                    <Route path="/" element={<Navigate to="/users" replace />} />
+                </Routes>
+            </Container>
+        </LoadingContextProvider>
+    );
 }
 
 export default App;
