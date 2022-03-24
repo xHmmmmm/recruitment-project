@@ -6,18 +6,21 @@ import { useData } from './../contexts/DataContext';
 import Post from "../Post";
 
 const PostsList = styled.ul`
-        display: grid;
-        grid-template-columns: 100%;
-    `
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+`
 
 export default function Posts()
 {
-    const { setIsLoading, isLoading } = useLoading()
-    const { posts, fetchPosts } = useData()
+    const { isLoading } = useLoading()
+    const { posts, fetchPosts, fetchComments } = useData()
 
     useEffect(() =>
     {
         fetchPosts()
+        fetchComments()
     }, [])
 
     return (

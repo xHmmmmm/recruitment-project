@@ -5,6 +5,7 @@ import Posts from './pages/Posts';
 import Todos from './pages/Todos';
 import styled from 'styled-components';
 import Navigation from "./Navigation";
+import PostPage from './pages/PostPage';
 
 
 const Container = styled.div`
@@ -17,6 +18,7 @@ const Container = styled.div`
 
 const Content = styled.main`
     overflow-y: scroll;
+    padding: 1rem;
 `
 
 function App()
@@ -28,6 +30,7 @@ function App()
                 <Routes>
                     <Route path="/users" element={<Users />} />
                     <Route path="/posts" element={<Posts />} />
+                    <Route path="/posts/:id" element={<PostPage />} />
                     <Route path="/todos" element={<Todos />} />
                     <Route path="/" element={<Navigate to="/users" replace />} />
                 </Routes>
