@@ -3,6 +3,32 @@ import { useParams } from "react-router-dom"
 import { useData } from './../contexts/DataContext';
 import LoadingSpinner from './../LoadingSpinner';
 import { useLoading } from './../contexts/LoadingContext';
+import styled from 'styled-components';
+import Comment from '../Comment';
+
+const PostWrapper = styled.div`
+    display: grid;
+    padding: 1rem;
+    gap: 1rem;
+`
+
+const Title = styled.h1`
+
+`
+
+const Content = styled.p`
+
+`
+
+const CommentsSectionLabel = styled.p`
+
+`
+
+const CommentsList = styled.ul`
+    display: grid;
+    grid-auto-rows: fit-content;
+    gap: 1rem;
+`
 
 export default function PostPage()
 {
@@ -34,7 +60,17 @@ export default function PostPage()
 
     return (
         <>
-            {isLoading ? <LoadingSpinner /> : <div>{postComments.map((comment) => <p>{comment.id}</p>)}</div>}
+            {isLoading ? <LoadingSpinner /> :
+                <PostWrapper>
+                    <Title>{title}</Title>
+                    <Content>{content}</Content>
+                    <CommentsSectionLabel>{postComments.length === 0 ? "No comments to show" : "Comments"}</CommentsSectionLabel>
+                    <CommentsList>
+                        {postComments.map((comment) => (
+                            <Comment key={comment.id} {...comment} />
+                        ))}
+                    </CommentsList>
+                </PostWrapper>}
         </>
     )
 }

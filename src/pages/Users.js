@@ -9,6 +9,11 @@ const UsersList = styled.ul`
     display: grid;
     grid-template-columns: 100%;
     gap: 0.5rem;
+
+    @media(max-width: 850px)
+    {
+        grid-template-columns: 1fr;
+    }
 `
 
 export default function Users()

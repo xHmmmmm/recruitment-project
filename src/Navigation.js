@@ -11,13 +11,24 @@ const NavLink = styled(Link)`
     background-color: #073985;
     display: grid;
     place-items: center;
-    transition: all 0.3s ease-in-out;
-    transition-property: background-color, color;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
 
-    :hover
+    @media(hover)
     {
-        background-color: #082b61;
-        color: white;
+        :hover
+        {
+            background-color: #082b61;
+            color: white;
+        }
+    }
+
+    
+    @media(max-width: 700px)
+    { 
+        font-size: 1.1rem;
     }
 `
 

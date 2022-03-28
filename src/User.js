@@ -17,6 +17,19 @@ const UserElement = styled.li`
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+    @media(max-width: 900px)
+    {
+        grid-template-columns: min-content 1fr;
+    }
+`
+
+const Label = styled.p`
+    display: none;
+    @media(max-width: 900px)
+    {
+        display: flex;
+    }
 `
 
 const IconElement = styled.span`
@@ -67,9 +80,14 @@ export default function User({ name, email, gender, status })
 
     return (
         <UserElement>
+            <Label>Name</Label>
             <p>{name}</p>
+            <Label>Email</Label>
+
             <p>{email}</p>
+            <Label>Gender</Label>
             <p>{gender}</p>
+            <Label>Status</Label>
             <IconElement isActive={isActive}>
                 {isActive ? <RiCheckboxCircleFill /> : < RiCloseCircleFill />}
                 <p>{status}</p>

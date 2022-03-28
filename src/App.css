@@ -41,8 +41,3 @@ a
 {
     cursor: pointer;
 }
-
-a:link, a:visited, a:hover, a:active
-{
-    color: inherit;
-}

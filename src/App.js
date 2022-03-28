@@ -19,6 +19,11 @@ const Container = styled.div`
 const Content = styled.main`
     overflow-y: scroll;
     padding: 1rem;
+    
+    @media(max-width: 700px)
+    { 
+        padding: 0.7rem;
+    }
 `
 
 function App()

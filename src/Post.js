@@ -15,7 +15,12 @@ const PostElement = styled.li`
     gap: 1rem;
     padding: 1rem 1.5rem;
     border-radius: 3px;
-    box-shadow: rgba(149, 157, 165, 0.1) 0px 0px 20px 5px;
+    box-shadow: rgba(149, 157, 165, 0.15) 0px 0px 20px 5px;
+
+    @media(max-width: 1200px)
+    {
+        padding: 0.8rem 1rem;
+    }
 `
 
 const Title = styled.h1`
@@ -24,6 +29,11 @@ const Title = styled.h1`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    @media(max-width: 1200px)
+    {
+        font-size: 1.3rem;
+    }
 `
 
 const Content = styled.p`
@@ -32,6 +42,11 @@ const Content = styled.p`
     overflow: hidden;
     text-overflow: ellipsis;
     max-height: 3.6rem;
+
+    @media(max-width: 1200px)
+    {
+        font-size: 1rem;
+    }
 `
 
 const Comments = styled.div`
@@ -45,6 +60,15 @@ const Comments = styled.div`
     > svg
     {
         font-size: 1.5rem;
+    }
+
+    @media(max-width: 1200px)
+    {
+        font-size: 0.9rem;
+        > svg
+        {
+            font-size: 1.3rem;
+        }
     }
 `
 
@@ -62,6 +86,11 @@ const OpenBtn = styled(Link)`
     > svg
     {
         font-size: 1.5rem;
+    }
+
+    @media(max-width: 1200px)
+    {
+        font-size: 0.9rem;
     }
 `
 
