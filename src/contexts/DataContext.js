@@ -11,7 +11,6 @@ export default function DataContextProvider({ children })
     const [posts, setPosts] = useState([])
     const [comments, setComments] = useState([])
     const [todos, setTodos] = useState([])
-    const [postComments, setPostComments] = useState([])
 
     const { setIsLoading } = useLoading()
 

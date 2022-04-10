@@ -8,26 +8,32 @@ import Comment from '../Comment';
 
 const PostWrapper = styled.div`
     display: grid;
-    padding: 1rem;
-    gap: 1rem;
+    padding: 0.5rem;
+    gap: 1em;
+
+    @media(max-width: 600px)
+    {
+        padding: 0.2rem;
+        font-size: 0.85rem;
+    }
 `
 
 const Title = styled.h1`
-
+    font-size: 1.5rem;
 `
 
 const Content = styled.p`
-
+    font-size: 1.1em;
 `
 
 const CommentsSectionLabel = styled.p`
-
+    font-weight: bold;
 `
 
 const CommentsList = styled.ul`
     display: grid;
     grid-auto-rows: fit-content;
-    gap: 1rem;
+    gap: 1em;
 `
 
 export default function PostPage()

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react'
+import React, { useState, useEffect, useReducer, useLayoutEffect } from 'react'
 import styled from 'styled-components';
 import { RiDiscussFill, RiArrowRightCircleLine } from 'react-icons/ri'
 import { useData } from './contexts/DataContext';
@@ -96,18 +96,13 @@ const OpenBtn = styled(Link)`
 
 export default function Post({ id, title, body })
 {
-    const { getComments } = useData()
+    const { getComments, comments } = useData()
     const [postComments, setPostComments] = useState([])
 
-    useEffect(() =>
+    useLayoutEffect(() =>
     {
-        async function loadData()
-        {
-            setPostComments(await getComments(id))
-        }
-
-        loadData()
-    }, [])
+        setPostComments(getComments(id))
+    }, [comments])
 
     return (
         <PostElement>
