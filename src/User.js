@@ -16,6 +16,7 @@ const UserElement = styled.li`
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        font-weight: 500;
     }
 
     @media(max-width: 900px)
@@ -26,6 +27,7 @@ const UserElement = styled.li`
 
 const Label = styled.p`
     display: none;
+
     @media(max-width: 900px)
     {
         display: flex;
@@ -58,13 +60,16 @@ const IconElement = styled.span`
         box-shadow: rgba(149, 157, 165, 0.1) 0px 0px 15px 5px;
     }
     
-    :hover
+    @media(hover)
     {
-        > p
+        :hover
         {
-            user-select: none;
-            opacity: 1;
-            visibility: visible;
+            > p
+            {
+                user-select: none;
+                opacity: 1;
+                visibility: visible;
+            }
         }
     }
 `
@@ -92,7 +97,6 @@ export default function User({ name, email, gender, status })
                 {isActive ? <RiCheckboxCircleFill /> : < RiCloseCircleFill />}
                 <p>{status}</p>
             </IconElement>
-            {/* <p>{status}</p> */}
         </UserElement>
     )
 }

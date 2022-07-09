@@ -59,7 +59,7 @@ const SortButton = styled.button`
     padding: 1em;
     font-size: 1em;
     border-radius: 5px;
-    font-weight: bold; 
+    font-weight: 600; 
     transition: background-color 0.2s ease-in-out;
 
     @media(hover)

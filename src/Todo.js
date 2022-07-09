@@ -13,8 +13,10 @@ const TodoElement = styled.li`
     gap: 0.7rem;
 `
 
-const Title = styled.h1`
+const Title = styled.p`
     grid-area: title;
+    font-size: 1.5em;
+    font-weight: 600;
 `
 
 const DueOn = styled.p`

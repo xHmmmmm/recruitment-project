@@ -23,9 +23,10 @@ const PostElement = styled.li`
     }
 `
 
-const Title = styled.h1`
+const Title = styled.p`
     grid-area: title;
     font-size: 1.5rem;
+    font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
